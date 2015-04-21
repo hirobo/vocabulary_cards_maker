@@ -5,14 +5,17 @@ if(!isset($_SESSION)){
 
 $title = $_SESSION['title'];
 $data = $_SESSION['data'];
-
-$path_file = dirname($_SERVER['SCRIPT_FILENAME']) . '/tmp/' . $title . '.txt';
+$temp_dir = '/tmp/downloads/';
+if (!file_exists($temp_dir)) {
+    mkdir($temp_dir, 0777, true);
+};
+$path_file = $temp_dir . $title . '.txt';
 if(!download_file($path_file, $data)){
     header('Location: error_page.php');
 }
 /////////////////////////////////////////////////
 function download_file($path_file, $data){
-    
+
     try {
         // if there is already the file in tmp/ then don't write
         if (!file_exists($path_file)) {
@@ -43,13 +46,13 @@ function download_file($path_file, $data){
         header("Content-Length: " . $content_length);
         header("Content-Type: application/octet-stream");
 
-        /* output file */        
+        /* output file */
        if (!readfile($path_file)) {
             throw new RuntimeException("Cannot read the file(" . $path_file . ")");
         }
         return TRUE;
     } catch (Exception $e) {
-    //    $error = $e->getMessage();
+        $error = $e->getMessage();
         return FALSE;
-    }    
+    }
 }

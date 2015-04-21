@@ -14,21 +14,20 @@ require_once 'config.php';
         <link type="text/css" href="style.css" rel="stylesheet">
         <!-- JavaScript -->
         <script src="lib/jquery-2.0.3.min.js"></script>
-        <script src="lib/jquery-ui.min.js"></script>        
+        <script src="lib/jquery-ui.min.js"></script>
         <script src="lib/bootstrap-2.3.2/js/bootstrap.min.js"></script>
     </head>
     <body style>
         <div class="wrapper">
             <div class="main">
-                <!-- Fixed navibar -->  
+                <!-- Fixed navibar -->
                 <div class="navbar navbar-inverse navbar-fixed-top">
                     <div class="navbar-inner">
                         <div class="container">
-                            <a class="brand" href=<?php echo INDEX_PHP; ?>><?php echo APP_TITLE; ?></a>
+                            <a class="brand" href=<?php echo MY_HOME; ?>><?php echo APP_TITLE; ?></a>
                             <div class="nav-collapse collapse">
                                 <ul class="nav">
-                                    <li><a href=<?php echo MY_HOME; ?>>Home</a></li>
-                                    <li><a href=<?php echo MY_HOME_DEMOS; ?>>Look other Demos!</a></li>
+                                    <li><a href=<?php echo SHOW_GITHUB; ?>>View Source Code</a></li>
                                 </ul>
                             </div>
                         </div>

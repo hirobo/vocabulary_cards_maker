@@ -1,5 +1,5 @@
 <?php
 define('APP_TITLE', 'Vocabulary Cards Maker');
-define('MY_HOME', 'http://hirobo.gehirn.ne.jp/');
-define('MY_HOME_DEMOS', 'http://hirobo.gehirn.ne.jp/category/demo');
-define('INDEX_PHP', 'http://'.$_SERVER['SERVER_NAME'].'/vocabulary_cards_maker');
+define('SHOW_GITHUB', 'https://github.com/hirobo/vocabulary_cards_maker');
+define('MY_GITHUB', 'https://github.com/hirobo');
+define('MY_HOME', "http://" . $_SERVER['HTTP_HOST']);
